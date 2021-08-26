@@ -1,71 +1,81 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Animation/Player/Sprite-0002.png" type="Texture" id=1]
 [ext_resource path="res://Script/Player.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/FreePixel.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Image/spacebar2.png" type="Texture" id=4]
+[ext_resource path="res://Image/spacebar1.png" type="Texture" id=5]
 
-[sub_resource type="AtlasTexture" id=11]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 0, 480, 160, 240 )
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 160, 480, 160, 240 )
-
-[sub_resource type="AtlasTexture" id=13]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 320, 480, 160, 240 )
-
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 1 )
-region = Rect2( 480, 480, 160, 240 )
-
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 240, 160, 240 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 160, 240, 160, 240 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 320, 240, 160, 240 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 480, 240, 160, 240 )
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 480, 160, 240 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 160, 480, 160, 240 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 320, 480, 160, 240 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 480, 480, 160, 240 )
+
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
-"loop": true,
-"name": "run",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "run",
+"speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 26.8368, 19.9793 )
 
-[sub_resource type="StreamTexture" id=19]
+[sub_resource type="StreamTexture" id=11]
 flags = 4
 load_path = "res://.import/dialog.png-efd4890a0c7e7bb954ce399c4646b38c.stex"
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=12]
 font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -73,20 +83,21 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.496216, 1.48863 )
 scale = Vector2( 0.5, 0.5 )
-frames = SubResource( 10 )
+frames = SubResource( 9 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.9514, 26.4351 )
-shape = SubResource( 1 )
+shape = SubResource( 10 )
 
 [node name="dialog" type="Sprite" parent="."]
 visible = false
 position = Vector2( 94.4048, -79.5876 )
 scale = Vector2( 1.62275, 1.6153 )
-texture = SubResource( 19 )
+z_index = 1
+texture = SubResource( 11 )
 
 [node name="Label" type="Label" parent="dialog"]
 anchor_left = 1.90735e-08
@@ -97,7 +108,7 @@ margin_left = -88.2232
 margin_top = -14.8432
 margin_right = 82.7768
 margin_bottom = 16.1568
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 12 )
 text = "romeooo
 "
 align = 1
@@ -106,3 +117,10 @@ uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Spacebar" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -2.16964, 71.6459 )
+scale = Vector2( 1.56757, 1.46154 )
+frames = SubResource( 13 )
+playing = true

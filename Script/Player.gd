@@ -4,8 +4,29 @@ export var speed = 100
 
 var velocity = Vector2.ZERO
 onready var Dialog = $dialog
+var inventoryOn = false
+
+signal accept
 
 func _physics_process(delta):
+	_move(delta)
+	_inventory();
+	_openAccept()
+	
+func _openAccept():
+	if (Input.is_action_just_pressed("ui_accept")):
+		print("space")
+		emit_signal("accept")
+	
+func _inventory():
+	if (Input.is_action_just_pressed("ui_inventory") && inventoryOn == false):
+		print("inventory On")
+		inventoryOn = true
+	elif (Input.is_action_just_pressed("ui_inventory") && inventoryOn == true):
+		print("inventory off")
+		inventoryOn = false
+	
+func _move(delta):
 	var input_vector = Vector2.ZERO
 	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
@@ -25,3 +46,9 @@ func callDialog(text,sec):
 	$dialog/Label.text = text
 	yield(get_tree().create_timer(sec), "timeout")
 	Dialog.visible = false
+	
+func showSpacebar():
+	$Spacebar.visible = true
+
+func hideSpacebar():
+	$Spacebar.visible = false
