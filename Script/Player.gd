@@ -17,8 +17,6 @@ func _physics_process(delta):
 	else:
 		velocity = Vector2.ZERO
 		$AnimatedSprite.play("idle")
-		
-	
 	move_and_collide(velocity * delta)
 	
 func callDialog(text,sec):

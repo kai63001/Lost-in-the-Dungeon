@@ -1,9 +1,10 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Screen/Node/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Main.gd" type="Script" id=2]
 [ext_resource path="res://Script/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://Tillset/0x72_16x16DungeonTileset.v3.png" type="Texture" id=4]
+[ext_resource path="res://Script/Skull.gd" type="Script" id=5]
 
 [sub_resource type="ConvexPolygonShape2D" id=24]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -672,6 +673,9 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 8/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 13.3541, 14.6782 )
+
 [node name="World" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -697,13 +701,25 @@ cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 851998, 1073741829, 0, 983070, 1073741829, 0, 983075, 536870915, 0, 983076, 536870913, 0, 1048605, 536870920, 0, 1048611, 536870914, 0, 1048612, 536870912, 0 )
 
-[node name="YSort" type="YSort" parent="."]
+[node name="Player" type="YSort" parent="."]
 
-[node name="Camera2D" type="Camera2D" parent="YSort"]
+[node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 script = ExtResource( 3 )
 
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 501.005, 283.714 )
+[node name="Player" parent="Player" instance=ExtResource( 1 )]
+position = Vector2( 543.666, 269.073 )
 scale = Vector2( 0.301604, 0.3103 )
+
+[node name="Dialog" type="YSort" parent="."]
+
+[node name="Skull" type="Area2D" parent="Dialog"]
+position = Vector2( 474.6, 264.748 )
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialog/Skull"]
+position = Vector2( 2.73636, 5.8968 )
+shape = SubResource( 26 )
+
+[connection signal="body_entered" from="Dialog/Skull" to="Dialog/Skull" method="_on_Skull_body_entered"]

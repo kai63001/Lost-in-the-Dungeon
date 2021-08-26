@@ -1,10 +1,9 @@
 extends Node2D
 
-onready var player = $YSort/Player
+onready var player = $Player/Player
 
 func _ready():
-	#DIALOG
 	player.callDialog("Where the fuck!!",2)
-	yield($YSort/Player/dialog,"hide")
+	yield($Player/Player/dialog,"hide")
 	player.callDialog("what happened to me",2)
 	
