@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Animation/Player/Sprite-0002.png" type="Texture" id=1]
 [ext_resource path="res://Script/Player.gd" type="Script" id=2]
@@ -59,6 +59,10 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 26.8368, 19.9793 )
 
+[sub_resource type="StreamTexture" id=19]
+flags = 4
+load_path = "res://.import/dialog.png-efd4890a0c7e7bb954ce399c4646b38c.stex"
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -73,3 +77,27 @@ playing = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -1.9514, 26.4351 )
 shape = SubResource( 1 )
+
+[node name="dialog" type="Sprite" parent="."]
+visible = false
+position = Vector2( 94.4048, -79.5876 )
+scale = Vector2( 1.62275, 1.6153 )
+texture = SubResource( 19 )
+
+[node name="Label" type="Label" parent="dialog"]
+anchor_left = 1.90735e-08
+anchor_top = 0.00614395
+anchor_right = 1.90735e-08
+anchor_bottom = 0.00614395
+margin_left = -88.2232
+margin_top = -14.8432
+margin_right = 82.7768
+margin_bottom = 16.1568
+text = "romeooo
+"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
