@@ -15,7 +15,6 @@ func _physics_process(delta):
 	
 func _openAccept():
 	if (Input.is_action_just_pressed("ui_accept")):
-		print("space")
 		emit_signal("accept")
 	
 func _inventory():
