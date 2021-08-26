@@ -11,7 +11,6 @@ func _physics_process(delta):
 	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	
 	if input_vector != Vector2.ZERO:
-		callDialog()
 		velocity = input_vector * speed
 		$AnimatedSprite.play("run")
 		$AnimatedSprite.flip_h = velocity.x < 0
@@ -22,7 +21,9 @@ func _physics_process(delta):
 	
 	move_and_collide(velocity * delta)
 	
-func callDialog():
+func callDialog(text,sec):
 	Dialog.visible = true
 	Dialog.position = Vector2($AnimatedSprite.position.x + 50,$AnimatedSprite.position.y - 70)
-	$dialog/Label.text = "Where the fuck"
+	$dialog/Label.text = text
+	yield(get_tree().create_timer(sec), "timeout")
+	Dialog.visible = false

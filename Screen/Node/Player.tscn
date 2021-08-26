@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Animation/Player/Sprite-0002.png" type="Texture" id=1]
 [ext_resource path="res://Script/Player.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/FreePixel.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
@@ -63,6 +64,9 @@ extents = Vector2( 26.8368, 19.9793 )
 flags = 4
 load_path = "res://.import/dialog.png-efd4890a0c7e7bb954ce399c4646b38c.stex"
 
+[sub_resource type="DynamicFont" id=20]
+font_data = ExtResource( 3 )
+
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
@@ -71,7 +75,6 @@ position = Vector2( -0.496216, 1.48863 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 10 )
 animation = "idle"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -93,6 +96,7 @@ margin_left = -88.2232
 margin_top = -14.8432
 margin_right = 82.7768
 margin_bottom = 16.1568
+custom_fonts/font = SubResource( 20 )
 text = "romeooo
 "
 align = 1
