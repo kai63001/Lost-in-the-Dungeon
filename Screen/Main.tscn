@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Screen/Node/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Main.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Script/Skull.gd" type="Script" id=5]
 [ext_resource path="res://Image/paper.png" type="Texture" id=6]
 [ext_resource path="res://Script/Paper.gd" type="Script" id=7]
+[ext_resource path="res://Screen/UI/Paper.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -858,6 +859,7 @@ shape = SubResource( 23 )
 [node name="Paper" type="Area2D" parent="Dialog"]
 position = Vector2( 632.721, 182.016 )
 script = ExtResource( 7 )
+Paper = ExtResource( 8 )
 
 [node name="paper" type="Sprite" parent="Dialog/Paper"]
 material = SubResource( 25 )

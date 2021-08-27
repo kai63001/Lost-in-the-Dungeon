@@ -10,9 +10,10 @@ config_version=4
 
 [application]
 
-config/name="Shooting"
+config/name="Lost in the Dungeon"
 run/main_scene="res://Screen/Main.tscn"
-config/icon="res://icon.png"
+boot_splash/bg_color=Color( 0.109804, 0.0666667, 0.0901961, 1 )
+config/icon="res://Image/paper.png"
 
 [debug]
 
