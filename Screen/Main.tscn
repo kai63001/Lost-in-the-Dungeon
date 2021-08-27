@@ -860,6 +860,10 @@ shape = SubResource( 23 )
 position = Vector2( 632.721, 182.016 )
 script = ExtResource( 7 )
 Paper = ExtResource( 8 )
+text = "Hello
+
+
+Welcome, are you wondering where is this place? Of course, it should be like that. But don't panic We have given you the skill. Try shouting out \"STATUS\". (Press I)"
 
 [node name="paper" type="Sprite" parent="Dialog/Paper"]
 material = SubResource( 25 )

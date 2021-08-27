@@ -4,7 +4,7 @@ onready var paper = $paper
 onready var player = get_parent().get_parent().get_node("Player/Player")
 export (PackedScene) var Paper
 var callDialog = [false]
-export var text = "GOD"
+export(String, MULTILINE) var text = "GOD"
 var openPaper = false
 
 func _ready():
@@ -21,7 +21,6 @@ func _on_Paper_body_entered(body):
 func _on_read_paper():
 	print(text)
 	if(openPaper) :
-		paper.use_parent_material = false
 		player.disconnect("accept",self,"_on_read_paper")
 		openPaper = false
 		get_tree().call_group("paper", "queue_free")
@@ -31,13 +30,12 @@ func _on_read_paper():
 		var readIt = Paper.instance()
 		add_child(readIt)
 		openPaper = true
-		readIt.text("Hi \n\nWelcom to the lost of dungeon")
+		readIt.text(text)
 	
 	
 func _on_Paper_body_exited(body):
 	if (body == player):
 		openPaper = false		
-		paper.use_parent_material = false
 		player.disconnect("accept",self,"_on_read_paper")
 		player.hideSpacebar()
 		get_tree().call_group("paper", "queue_free")
