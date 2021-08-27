@@ -25,4 +25,5 @@ func _on_read_paper():
 func _on_Paper_body_exited(body):
 	if (body == player):
 		paper.use_parent_material = false
+		player.disconnect("accept",self,"_on_read_paper")
 		player.hideSpacebar()		
