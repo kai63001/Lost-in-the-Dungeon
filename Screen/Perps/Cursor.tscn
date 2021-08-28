@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Image/cursor/cursor1.png" type="Texture" id=1]
+[ext_resource path="res://Image/cursor/cursor2.png" type="Texture" id=2]
+[ext_resource path="res://Script/perps/Cursor.gd" type="Script" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Cursor" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1, 0.993341 )
+frames = SubResource( 1 )
+frame = 1
+playing = true
