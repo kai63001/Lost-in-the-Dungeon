@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Screen/Node/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Main.gd" type="Script" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Image/paper.png" type="Texture" id=6]
 [ext_resource path="res://Script/Paper.gd" type="Script" id=7]
 [ext_resource path="res://Screen/UI/Paper.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Screen/Perps/Cursor.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -902,8 +901,6 @@ texture = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialog/Paper"]
 position = Vector2( 32.2567, 36.5887 )
 shape = SubResource( 26 )
-
-[node name="Cursor" parent="." instance=ExtResource( 9 )]
 
 [connection signal="body_entered" from="Dialog/Skull" to="Dialog/Skull" method="_on_Skull_body_entered"]
 [connection signal="body_entered" from="Dialog/Paper" to="Dialog/Paper" method="_on_Paper_body_entered"]
