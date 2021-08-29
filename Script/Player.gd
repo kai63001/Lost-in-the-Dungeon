@@ -24,12 +24,12 @@ func _inventory():
 		callDialog("Status",1);
 		get_tree().call_group("paper","queue_free")
 		inventoryOn = true
-		get_tree().paused = true
+		#get_tree().paused = true
 	elif (Input.is_action_just_pressed("ui_inventory") && inventoryOn == true):
 		print("inventory off")
 		get_tree().call_group("paper","queue_free")		
 		inventoryOn = false
-		get_tree().paused = false
+		#get_tree().paused = false
 
 	
 func _move(delta):
@@ -40,7 +40,9 @@ func _move(delta):
 	if input_vector != Vector2.ZERO:
 		velocity = input_vector * speed
 		$AnimatedSprite.play("run")
-		$AnimatedSprite.flip_h = velocity.x < 0
+		if (velocity.y == 0):
+			$AnimatedSprite.flip_h = velocity.x < 0
+		
 	else:
 		velocity = Vector2.ZERO
 		$AnimatedSprite.play("idle")
