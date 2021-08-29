@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Animation/Player/Sprite-0002.png" type="Texture" id=1]
 [ext_resource path="res://Script/Player.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/FreePixel.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Image/spacebar2.png" type="Texture" id=4]
 [ext_resource path="res://Image/spacebar1.png" type="Texture" id=5]
+[ext_resource path="res://Image/light.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -82,12 +83,17 @@ animations = [ {
 ]]
 script = ExtResource( 2 )
 
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( -1.56348, 0.286788 )
+scale = Vector2( 0.769929, 0.685122 )
+texture = ExtResource( 6 )
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.496216, 1.48863 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 3
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -125,4 +131,8 @@ visible = false
 position = Vector2( -2.16964, 71.6459 )
 scale = Vector2( 1.56757, 1.46154 )
 frames = SubResource( 13 )
+frame = 1
 playing = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.352941, 0.352941, 0.352941, 1 )

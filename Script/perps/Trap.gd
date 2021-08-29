@@ -8,7 +8,6 @@ onready var boxColition = $CollisionShape2D
 
 
 func _ready():
-	boxColition.scale()
 	pass # Replace with function body.
 
 
