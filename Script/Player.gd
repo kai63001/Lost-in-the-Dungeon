@@ -20,13 +20,17 @@ func _openAccept():
 func _inventory():
 	if (Input.is_action_just_pressed("ui_inventory") && inventoryOn == false):
 		print("inventory On")
+		
 		callDialog("Status",1);
 		get_tree().call_group("paper","queue_free")
 		inventoryOn = true
+		get_tree().paused = true
 	elif (Input.is_action_just_pressed("ui_inventory") && inventoryOn == true):
 		print("inventory off")
 		get_tree().call_group("paper","queue_free")		
 		inventoryOn = false
+		get_tree().paused = false
+
 	
 func _move(delta):
 	var input_vector = Vector2.ZERO
