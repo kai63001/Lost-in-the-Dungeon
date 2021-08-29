@@ -77,7 +77,9 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[node name="Player" type="KinematicBody2D"]
+[node name="Player" type="KinematicBody2D" groups=[
+"player",
+]]
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
@@ -85,6 +87,7 @@ position = Vector2( -0.496216, 1.48863 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 9 )
 animation = "idle"
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

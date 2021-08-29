@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Screen/Node/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Main.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Image/paper.png" type="Texture" id=6]
 [ext_resource path="res://Script/Paper.gd" type="Script" id=7]
 [ext_resource path="res://Screen/UI/Paper.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Screen/Perps/Trap.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -860,6 +861,9 @@ cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 851998, 1073741829, 0, 983070, 1073741829, 0, 983075, 536870915, 0, 983076, 536870913, 0, 1048605, 536870920, 0, 1048611, 536870914, 0, 1048612, 536870912, 0 )
+
+[node name="Trap" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 695.251, 216.411 )
 
 [node name="Player" type="YSort" parent="."]
 
