@@ -84,17 +84,18 @@ animations = [ {
 script = ExtResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
-position = Vector2( -1.56348, 0.286788 )
+position = Vector2( 1.43652, 17.2868 )
 scale = Vector2( 0.769929, 0.685122 )
 texture = ExtResource( 6 )
 texture_scale = 0.8
+shadow_gradient_length = 33.6
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.496216, 1.48863 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

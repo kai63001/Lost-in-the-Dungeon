@@ -22,7 +22,6 @@ extents = Vector2( 8.12353, 8.06265 )
 
 [node name="Trap" type="Area2D"]
 script = ExtResource( 3 )
-howManyTrap = 3
 
 [node name="TrapAnimation" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )

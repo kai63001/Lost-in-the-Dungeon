@@ -1,14 +1,9 @@
 extends Area2D
 
 var run = false
-export var howManyTrap = 1
-var colition
 onready var trap = $TrapAnimation
 onready var boxColition = $CollisionShape2D
-
-
-func _ready():
-	pass # Replace with function body.
+			
 
 
 func _on_Trap_body_entered(body):
@@ -20,4 +15,5 @@ func _on_Trap_body_entered(body):
 
 func _on_Trap_body_exited(body):
 	if(body.is_in_group("player")):
+		$TrapAnimation.play("default")		
 		$TrapAnimation.stop()
