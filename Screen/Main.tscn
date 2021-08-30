@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://Screen/Node/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Main.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Script/Paper.gd" type="Script" id=7]
 [ext_resource path="res://Screen/UI/Paper.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Screen/Perps/Trap.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Screen/UI/Main.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Screen/Perps/Cursor.tscn" type="PackedScene" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -911,7 +913,16 @@ format = 1
 tile_data = PoolIntArray( 851998, 1073741829, 0, 983070, 1073741829, 0, 983075, 536870915, 0, 983076, 536870913, 0, 1048605, 536870920, 0, 1048611, 536870914, 0, 1048612, 536870912, 0 )
 
 [node name="Trap" parent="TileMap" instance=ExtResource( 9 )]
-position = Vector2( 695.251, 216.411 )
+position = Vector2( 696.251, 200.411 )
+
+[node name="Trap2" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 711.859, 200.334 )
+
+[node name="Trap3" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 728.314, 200.411 )
+
+[node name="Trap4" parent="TileMap" instance=ExtResource( 9 )]
+position = Vector2( 743.637, 200.411 )
 
 [node name="Player" type="YSort" parent="."]
 
@@ -955,6 +966,10 @@ texture = ExtResource( 6 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dialog/Paper"]
 position = Vector2( 32.2567, 36.5887 )
 shape = SubResource( 42 )
+
+[node name="UIMain" parent="." instance=ExtResource( 10 )]
+
+[node name="Cursor" parent="." instance=ExtResource( 11 )]
 
 [connection signal="body_entered" from="Dialog/Skull" to="Dialog/Skull" method="_on_Skull_body_entered"]
 [connection signal="body_entered" from="Dialog/Paper" to="Dialog/Paper" method="_on_Paper_body_entered"]

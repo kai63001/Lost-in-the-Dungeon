@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Image/UI/Health.png" type="Texture" id=1]
+[ext_resource path="res://Image/UI/background.png" type="Texture" id=2]
+
+[node name="UIMain" type="Control"]
+anchor_left = 0.000776857
+anchor_top = 0.00132584
+anchor_right = 1.00078
+anchor_bottom = 1.00133
+margin_top = 2.0043
+margin_bottom = 2.00427
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+margin_left = 12.0
+margin_top = 13.0
+margin_right = 286.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureProgress" type="TextureProgress" parent="CanvasLayer/MarginContainer"]
+margin_right = 274.0
+margin_bottom = 29.0
+value = 79.0
+texture_progress = ExtResource( 1 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/MarginContainer"]
+margin_right = 274.0
+margin_bottom = 29.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
