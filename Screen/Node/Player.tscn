@@ -87,13 +87,14 @@ script = ExtResource( 2 )
 position = Vector2( -1.56348, 0.286788 )
 scale = Vector2( 0.769929, 0.685122 )
 texture = ExtResource( 6 )
+texture_scale = 0.8
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.496216, 1.48863 )
 scale = Vector2( 0.5, 0.5 )
 frames = SubResource( 9 )
 animation = "idle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
