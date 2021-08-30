@@ -15,5 +15,6 @@ func _on_Trap_body_entered(body):
 
 func _on_Trap_body_exited(body):
 	if(body.is_in_group("player")):
+		yield(get_tree().create_timer(1), "timeout")
 		$TrapAnimation.play("default")		
 		$TrapAnimation.stop()
